@@ -15,7 +15,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 /**
  * Created by Matheus Ribeiro on 24/4/2018.
- * RA 816117880
+ * RA 816117912
  */
 
 public class PaisDataNetwork {
@@ -36,7 +36,7 @@ public class PaisDataNetwork {
             JSONArray vetor = new JSONArray(resultado);
             for(int i = 0; i < vetor.length(); i++){
                 JSONObject item = (JSONObject) vetor.get(i);
-                Pais pais = new Pais();
+                br.usjt.desmob.paises.Pais pais = new br.usjt.desmob.paises.Pais();
                 try {
                     pais.setArea(item.getInt("area"));
                 } catch (Exception e){
@@ -137,7 +137,7 @@ public class PaisDataNetwork {
             throw new IOException(e);
         }
 
-        return paises.toArray(new Pais[0]);
+        return paises.toArray(new br.usjt.desmob.paises.Pais[0]);
     }
 
     public static boolean isConnected(Context context){

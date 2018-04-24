@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import static br.usjt.desmob.paises.PaisContract.PaisEntry.*;
 /**
  * Created by Matheus Ribeiro on 24/4/2018.
- * RA 816117880
+ * RA 816117912
  */
 
 public class PaisDb {
@@ -79,7 +79,7 @@ public class PaisDb {
         Cursor c = db.query( TABLE_NAME, colunas, null, null,
                 ordem, null, null);
         while(c.moveToNext()) {
-            Pais pais = new Pais();
+            br.usjt.desmob.paises.Pais pais = new br.usjt.desmob.paises.Pais();
             pais.setNome(c.getString(c.getColumnIndex( COLUMN_NAME_NOME)));
             pais.setRegiao(c.getString(c.getColumnIndex( COLUMN_NAME_REGIAO)));
             pais.setCapital(c.getString(c.getColumnIndex( COLUMN_NAME_CAPITAL)));
@@ -94,32 +94,32 @@ public class PaisDb {
             pais.setArea(c.getInt(c.getColumnIndex( COLUMN_NAME_AREA ) ));
 
             ArrayList<String> moedas = new ArrayList<>();
-            moedas.add(c.getString(c.getColumnIndex((String.valueOf(PaisContract.PaisEntry.COLUMN_NAME_MOEDAS)))));
+            moedas.add(c.getString(c.getColumnIndex((String.valueOf(br.usjt.desmob.paises.PaisContract.PaisEntry.COLUMN_NAME_MOEDAS)))));
             pais.setMoedas(moedas);
 
             ArrayList<String> fronteiras = new ArrayList<>();
-            fronteiras.add(c.getString(c.getColumnIndex((String.valueOf(PaisContract.PaisEntry.COLUMN_NAME_FRONTEIRAS)))));
+            fronteiras.add(c.getString(c.getColumnIndex((String.valueOf(br.usjt.desmob.paises.PaisContract.PaisEntry.COLUMN_NAME_FRONTEIRAS)))));
             pais.setFronteiras(fronteiras);
 
             ArrayList<String> fusos = new ArrayList<>();
-            fusos.add(c.getString(c.getColumnIndex((String.valueOf(PaisContract.PaisEntry.COLUMN_NAME_FUSOS)))));
+            fusos.add(c.getString(c.getColumnIndex((String.valueOf(br.usjt.desmob.paises.PaisContract.PaisEntry.COLUMN_NAME_FUSOS)))));
             pais.setFusos(fusos);
 
             ArrayList<String> dominios = new ArrayList<>();
-            dominios.add(c.getString(c.getColumnIndex((String.valueOf(PaisContract.PaisEntry.COLUMN_NAME_DOMINIOS)))));
+            dominios.add(c.getString(c.getColumnIndex((String.valueOf(br.usjt.desmob.paises.PaisContract.PaisEntry.COLUMN_NAME_DOMINIOS)))));
             pais.setDominios(dominios);
 
             ArrayList<String> idiomas = new ArrayList<>();
-            idiomas.add(c.getString(c.getColumnIndex((String.valueOf(PaisContract.PaisEntry.COLUMN_NAME_IDIOMAS)))));
+            idiomas.add(c.getString(c.getColumnIndex((String.valueOf(br.usjt.desmob.paises.PaisContract.PaisEntry.COLUMN_NAME_IDIOMAS)))));
             pais.setIdiomas(idiomas);
 
             paises.add(pais);
         }
         c.close();
         if(paises.size()> 0) {
-            return paises.toArray(new Pais[0]);
+            return paises.toArray(new br.usjt.desmob.paises.Pais[0]);
         } else {
-            return new Pais[0];
+            return new br.usjt.desmob.paises.Pais[0];
         }
 
         }

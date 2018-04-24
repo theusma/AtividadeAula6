@@ -1,10 +1,9 @@
 package br.usjt.desmob.paises;
 
 import android.provider.BaseColumns;
-
 /**
  * Created by Matheus Ribeiro on 24/4/2018.
- * RA 816117880
+ * RA 816117912
  */
 public class PaisContract {
     public static abstract class PaisEntry implements BaseColumns {

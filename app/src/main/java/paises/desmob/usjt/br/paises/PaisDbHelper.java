@@ -8,7 +8,7 @@ import static br.usjt.desmob.paises.PaisContract.PaisEntry.*;
 
 /**
  * Created by Matheus Ribeiro on 24/4/2018.
- * RA 816117880
+ * RA 816117912
  */
 
 public class PaisDbHelper extends SQLiteOpenHelper {
